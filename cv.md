@@ -1,7 +1,7 @@
 # Ulyana Brataus
 ![photo](photo.jpeg "My photo")
 ## Contacts:
-* Email:ubrataus@gmail.com
+* Email: ubrataus@gmail.com
 * Phone: +375 29 618 35 37
 * Github: [UlyanaBrataus](https://github.com/UlyanaBrataus)
 * Location: Minsk, Belarus
