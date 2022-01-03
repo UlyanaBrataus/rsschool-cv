@@ -4,11 +4,158 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ulyana Brataus CV</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/cv_folder/style.css" />
   </head>
-  <body>
-    <h1 class="day">Have a nice day!</h1>
-    <h2 class="new-year">Happy New Year!</h2>
+  <body class="container">
+    <header class="header">
+      <nav class="header-nav container">
+        <ul class="header-nav-list">
+          <li><a class="header-nav-link" href="#about">About me</a></li>
+          <li><a class="header-nav-link" href="#contacts">Contacts</a></li>
+          <li><a class="header-nav-link" href="#skills">Skills</a></li>
+          <li><a class="header-nav-link" href="#projects">Projects</a></li>
+          <li><a class="header-nav-link" href="#code">Code example</a></li>
+          <li><a class="header-nav-link" href="#education">Education</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="section-name grid grid--2-cols grid--center-v">
+        <div class="main-photo-box">
+          <img src="/cv_folder/img/photo.jpeg" class="img" alt="My photo" />
+        </div>
+
+        <div class="main-text-box">
+          <div class="headings">
+            <h1 class="heading-primary"> Ulyana Brataus </h1>
+            <h2 class="profession">Junior front-end developer</h2>
+          </div>
+        </div>
+      </section>
+      <div class="main-container grid grid--2-cols">
+        <aside class="left-side">
+          <div class="skill-box">
+            <h2 class="skill-heading heading-secondary-left" id="skills"
+              >Skills</h2
+            >
+
+            <ul class="skill-list">
+              <li class="skill">HTML</li>
+              <li class="skill">CSS</li>
+              <li class="skill">JavaScript</li>
+              <li class="skill">Git</li>
+              <li class="skill">Figma</li>
+            </ul>
+          </div>
+          <div class="contacts-box">
+            <h2 class="heading-secondary-left" id="contacts">Contacts</h2>
+            <ul class="contact-list">
+              <li
+                ><a class="contact-link" href="mailto:ubrataus@gmail.com"
+                  >Email</a
+                ></li
+              >
+
+              <li
+                ><a class="contact-link" href="tel:+375296183537">Phone</a></li
+              >
+
+              <li
+                ><a
+                  class="contact-link"
+                  href="https://github.com/UlyanaBrataus"
+                  target="_blank"
+                  >Github</a
+                ></li
+              >
+            </ul>
+          </div>
+        </aside>
+        <div class="right-side">
+          <section class="section-about paddings">
+            <div class="self-description">
+              <h2 class="heading-secondary about" id="about">About me</h2>
+              <p
+                >I'm a second year MSLU student. I became interested in
+                programming and started learning front-end development in August
+                2021.
+              </p>
+            </div>
+          </section>
+          <section class="section-projects paddings">
+            <h2 class="heading-secondary" id="projects">Projects</h2>
+
+            <p>Examples of my work: </p>
+            <ul class="projects-list">
+              <li
+                ><a
+                  class="projects-list-link"
+                  href="https://omnifood-ulyana.netlify.app"
+                  target="_blank"
+                  >Omnifood project</a
+                ></li
+              >
+              <li
+                ><a
+                  class="projects-list-link"
+                  href="https://breakoutgamebrataus.netlify.app"
+                  target="_blank"
+                  >Breakout game</a
+                ></li
+              >
+            </ul>
+          </section>
+          <section class="section-code paddings">
+            <h2 class="heading-secondary" id="code">Code example</h2>
+            <div class="code">
+              <pre>
+              <code>
+                function songDecoder(song){
+                  return song.split('WUB').join(' ').replace(/\s+/g, ' ').trim() 
+                 }
+              </code>
+            </pre>
+            </div>
+          </section>
+          <section class="section-education paddings">
+            <h2 class="heading-secondary" id="education">Education</h2>
+            <ul class="education-list">
+              <li class="edu-unit"
+                >RS Schools «JavaScript/Front-end. Stage 0</li
+              >
+              <li class="edu-unit"
+                >Build Responsive Real-World Websites with HTML and CSS
+                (Udemy)</li
+              >
+              <li class="edu-unit">JavaScript 2.0 (by Luschenko Alexander)</li>
+              <li class="edu-unit"
+                >Minsk State Linguistic University (2020 - present)</li
+              >
+            </ul>
+            <h3 class="heading-tertiary">English</h3>
+            <p class="english">English - B2</p>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer grid grid--2-cols-footer">
+        <div class="left-side-footer"> <span>2021</span></div>
+        <div class="footer-item">
+          <a
+            class="footer-img-link"
+            href="https://rs.school/js/"
+            target="_blank"
+          >
+            <img src="/cv_folder/img/rs_school_js.svg" alt="RSschool logo" />
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

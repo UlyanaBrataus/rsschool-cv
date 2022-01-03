@@ -1,6 +1,343 @@
-.day {
-  color: darkred;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.new-year {
-  color: darkred;
+
+html {
+  /* font-size: 10px; - this setting won't let user to change font-size */
+  /* Default browser fs - 16px, 10px = 62.5% of 16 px,  16 * 0.625 = 10
+    Persentage of user's browser font-size setting. User can change fs and our element's size will change automatically  */
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* does NOT work on Safari browser now (on Iphones too)*/
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #333;
+  /* to make burger menu invisible, while it's on the right side. But only works if there is nothing absolutely positioned in relation to body  */
+  overflow-x: hidden;
+}
+
+/***************************************/
+/* GENERAL REUSABLE COMPONENTS */
+/***************************************/
+
+.container {
+  /* or 114rem */
+  max-width: 144rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 3.6rem;
+}
+
+.heading-secondary-left {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 7.2rem;
+  color: rgb(238, 220, 161);
+}
+
+.grid {
+  display: grid;
+  column-gap: 6.4rem;
+  row-gap: 9.6rem;
+  /* margin-bottom: 9.6rem; */
+}
+
+.grid--2-cols {
+  grid-template-columns: 1fr 2fr;
+
+  justify-content: center;
+}
+
+.grid--center-v {
+  align-items: center;
+}
+
+.grid--vert {
+  align-items: center;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+/***************************************/
+/* HEADER */
+/***************************************/
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(27, 3, 3);
+  /* Making fixed height because we want to make header sticky later */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+  /* for absolutely positioned burger menu, cause it's a parent of header-nav  */
+  position: relative;
+}
+.header-nav-list {
+  list-style: none;
+  display: flex;
+  gap: 4.8rem;
+  align-items: center;
+}
+
+.header-nav-link:link,
+.header-nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(238, 220, 161);
+  font-weight: bold;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+
+.header-nav-link:hover,
+.header-nav-link:active {
+  color: #e6e339;
+}
+
+.paddings {
+  padding-right: 9.6rem;
+  padding-left: 4.8rem;
+  padding-bottom: 2.4rem;
+  margin-top: 4.8rem;
+}
+
+.img {
+  display: block;
+  width: 100%;
+  border-right: 10px solid rgb(27, 3, 3);
+}
+
+.main-text-box {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.section-name {
+  border-right: 10px solid rgb(27, 3, 3);
+  border-bottom: 10px solid rgb(27, 3, 3);
+  border-left: 10px solid rgb(27, 3, 3);
+}
+
+.profession {
+  font-weight: 700;
+  font-size: 2.4rem;
+}
+
+/***************************************/
+/* ASIDE */
+/***************************************/
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  padding-top: 9.6rem;
+  background-color: rgb(27, 3, 3);
+  /* width: 36.7rem; */
+}
+
+/* SECTION SKILLS */
+
+.skill-box {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3.8rem;
+  align-items: center;
+  color: rgb(238, 220, 161);
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 9.6rem;
+}
+
+/* SECTION CONTACTS */
+
+.contacts-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+  align-items: center;
+}
+
+.contact-link:link,
+.contact-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: rgb(238, 220, 161);
+  font-weight: bold;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+
+.contact-link:hover,
+.contact-link:active {
+  color: #e6e339;
+}
+
+/***************************************/
+/* RIGHT SIDE */
+/***************************************/
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 10px solid rgb(27, 3, 3);
+  padding-top: 4.8rem;
+}
+
+/* SECTION ABOUT */
+
+.section-about {
+  display: flex;
+  align-items: flex-end;
+}
+
+.section-about p {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+/* SECTION PROJECTS */
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 1.8rem;
+}
+
+.projects-list-link:link,
+.projects-list-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: rgba(187, 125, 44, 0.986);
+  font-weight: bold;
+  font-size: 2rem;
+  transition: all 0.3s;
+}
+
+.projects-list-link:hover,
+.projects-list-link:active {
+  color: #e6e339;
+}
+
+.section-projects p {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2.4rem;
+}
+
+/* SECTION CODE */
+
+.code {
+  display: inline-block;
+  /* overflow-wrap: break-wrap; */
+  font-size: 2rem;
+  font-weight: 500;
+}
+pre {
+  width: 100%;
+  white-space: pre-wrap;
+}
+
+/* SECTION EDUCATION */
+
+.education-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 3.6rem;
+}
+.english {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+/***************************************/
+/* FOOTER */
+/***************************************/
+
+.grid--2-cols-footer {
+  grid-template-columns: 1.01fr 2fr;
+
+  justify-content: center;
+}
+
+footer {
+  border-right: 10px solid rgb(27, 3, 3);
+  border-bottom: 10px solid rgb(27, 3, 3);
+}
+
+.left-side-footer {
+  background-color: rgb(27, 3, 3);
+}
+.footer-img-link img {
+  display: block;
+  height: 7rem;
+  padding-right: 10rem;
+  padding-bottom: 1.8rem;
+}
+.left-side-footer {
+  padding-top: 2.8rem;
+  font-weight: 500;
+  font-size: 2rem;
+  color: rgb(238, 220, 161);
+  text-align: center;
+}
+.footer-item {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
